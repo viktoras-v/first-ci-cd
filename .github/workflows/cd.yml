@@ -21,8 +21,8 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-
-      - name: Publish
-        uses: actions/deploy-pages@v4
+ #     - name: Deploy to GitHub Pages
+  #      uses: actions/upload-pages-artifact@v3
+#
+ #     - name: Publish
+  #      uses: actions/deploy-pages@v4
