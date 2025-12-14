@@ -4,6 +4,7 @@ on:
     workflows: ["ci"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   deploy:
