@@ -1,4 +1,9 @@
 name: Complex application CI
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-latest
