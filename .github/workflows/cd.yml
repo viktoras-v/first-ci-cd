@@ -1,3 +1,4 @@
+name: Complex application CI
 jobs:
   deploy:
     runs-on: ubuntu-latest
