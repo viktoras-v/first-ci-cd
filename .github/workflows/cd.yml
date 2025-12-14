@@ -1,24 +1,16 @@
-name: Deploy complex application
-
-on:
-  push:
-    branches: [ "main" ]
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build static site
+      - name: Build Docker image
+        run: docker build -t my-app .
+
+      - name: Extract build artifacts
         run: |
-          npm install
-          npm run build
-
-
+          container_id=$(docker create my-app)
+          docker cp $container_id:/app/build ./build
+          docker rm $container_id
