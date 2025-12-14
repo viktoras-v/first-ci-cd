@@ -17,8 +17,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-app .
 
-      - name: Extract build artifacts
-        run: |
-          container_id=$(docker create my-app)
-          docker cp $container_id:/app/build ./build
-          docker rm $container_id
+      - name: Login
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/homework_21
