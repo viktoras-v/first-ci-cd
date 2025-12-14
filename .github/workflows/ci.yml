@@ -1,4 +1,4 @@
-name: Complex application CI
+name: ci
 
 on:
   push:
