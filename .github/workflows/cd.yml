@@ -1,4 +1,4 @@
-name: Complex application CI
+name: Complex application CD
 on:
   push:
     branches:
